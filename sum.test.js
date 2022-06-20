@@ -26,3 +26,22 @@ test("test async function", async ()=>{
     const data = await fetchData1()
     expect(data).toBe('done');
 })
+
+//before Each
+const common = require('./common');
+
+beforeEach(()=>{
+    console.warn(common())
+});
+
+test("testing sum function",()=>{
+    expect(sum()).toBe(3)
+});
+
+test("testing sum function",()=>{
+    expect(sum()).toBe(3)
+});
+
+test("testing sum function",()=>{
+    expect(sum()).toBe(3)
+});
