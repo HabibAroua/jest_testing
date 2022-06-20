@@ -30,9 +30,9 @@ test("test async function", async ()=>{
 //before Each
 const common = require('./common');
 
-beforeEach(()=>{
+/*beforeEach(()=>{
     console.warn(common())
-});
+});*/
 
 test("testing sum function",()=>{
     expect(sum()).toBe(3)
@@ -44,4 +44,53 @@ test("testing sum function",()=>{
 
 test("testing sum function",()=>{
     expect(sum()).toBe(3)
+});
+
+//new tutoriel
+const functions = require('./functions');
+
+test('Adds 2 + 2 to equal 4',()=>{
+    expect(functions.add(2, 2)).toBe(4);
+});
+
+test('Adds 2 + 2 to NOT equal 5',()=>{
+    expect(functions.add(2, 2)).not.toBe(5);
+});
+
+test('Should be null',()=>{
+    expect(functions.isNull()).toBeNull();
+});
+
+test('Should be falsy',()=>{
+    expect(functions.checkValue(undefined)).toBeFalsy(); // you can use null
+});
+
+test('User should be Brad Traversy object', ()=>{
+    expect(functions.createUser()).toEqual({
+        firstName: 'Brad',
+        lastName: 'Traversy'
+    });
+});
+
+// Less than and greater than
+test('Should be under 1600', ()=>{
+    const load1 = 800;
+    const load2 = 700;
+
+    expect(load1 + load2).toBeLessThan(1600);
+});
+
+test('Sum function under 6',()=>{
+    expect(sum()).toBeLessThanOrEqual(6);
+});
+
+//Regex
+test('There is no I in team',()=> {
+    expect('teamI').not.toMatch(/i/);
+});
+
+// Arrays
+test('Admin should be in usernames',()=>{
+    usernames = ['john', 'karen','admin'];
+    expect(usernames).toContain('admin');
 });
