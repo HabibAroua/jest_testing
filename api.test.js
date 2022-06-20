@@ -2,7 +2,7 @@ const axios = require('axios');
 
 test
 (
-    "test case",()=>
+    "Test api",()=>
     {
         axios
 		    .get("https://facebook.github.io/react-native/movies.json")
